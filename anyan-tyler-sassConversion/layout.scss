@@ -2,11 +2,14 @@
 $white: #fff;
 $grey: #aaa;
 $darkgrey: #333;
+$background: #00665e;
 $font-goth: 'AlternateGothic2 BT', sans-serif;
 $font-proxima: 'Proxima Nova Rg', sans-serif;
 @mixin navi {
   text-align: center;
   margin: 1em 0;
+  color: complement($background);
+  background: lighten($background, 20%)
 }
 
 
@@ -34,7 +37,7 @@ $font-proxima: 'Proxima Nova Rg', sans-serif;
 
  body{
   @extend html;
-  background: url(../images/bg.jpg) no-repeat center center fixed;
+  background: url(../images/bg.jpg) no-repeat center center fixed $background;
   background-size: cover;
  }
 

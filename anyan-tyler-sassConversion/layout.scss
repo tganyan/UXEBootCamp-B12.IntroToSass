@@ -5,6 +5,8 @@ $darkgrey: #333;
 $background: #00665e;
 $font-goth: 'AlternateGothic2 BT', sans-serif;
 $font-proxima: 'Proxima Nova Rg', sans-serif;
+
+// mixins
 @mixin navi {
   text-align: center;
   margin: 1em 0;

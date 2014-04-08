@@ -11,6 +11,21 @@ $font-proxima: 'Proxima Nova Rg', sans-serif;
   color: complement($background);
   background: lighten($background, 20%)
 }
+@mixin input-declarations {
+  border: 3px $white;
+  font-size: 1.5em;
+  background-color: rgba(240,240,240,.0);
+  min-height: 2em;
+  width: 100%;
+  display: block;
+  margin: .5em 0;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9);
+  color: $white;
+  border-radius: 0;
+  padding-left: 1em;
+  font-family: '$font-proxima;
+  -webkit-appearance: none;
+}
 
 
 *, *:before, *:after {
@@ -70,38 +85,14 @@ $font-proxima: 'Proxima Nova Rg', sans-serif;
  }
 
  input[type="text"] {
-  border: 3px $white;
-  font-size: 1.5em;
-  background-color: rgba(240,240,240,.0);
-  min-height: 2em;
-  width: 100%;
-  display: block;
-  margin: .5em 0;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9);
-  color: $white;
-  border-radius: 0;
-  padding-left: 1em;
-  font-family: 'Proxima Nova Rg', sans-serif;
-  -webkit-appearance: none;
+  @include input-declarations;
   &:focus {
     color:$white;
   };
 }
 
 input[type="password"] {
-  border: 3px $white;
-  font-size: 1.5em;
-  background-color: rgba(240,240,240,.0);
-  min-height: 2em;
-  width: 100%;
-  display: block;
-  margin: .5em 0;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9);
-  color: $white;
-  border-radius: 0;
-  padding-left: 1em;
-  font-family: $font-proxima;
-  -webkit-appearance: none;
+  @include input-declarations;
   &:focus {
     color: $white;
   };

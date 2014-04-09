@@ -6,6 +6,11 @@ $background: #00665e;
 $font-goth: 'AlternateGothic2 BT', sans-serif;
 $font-proxima: 'Proxima Nova Rg', sans-serif;
 
+// Functions
+@function quad($input) {
+  @return $input * 4;
+}
+
 // mixins
 @mixin navi {
   text-align: center;
@@ -27,6 +32,19 @@ $font-proxima: 'Proxima Nova Rg', sans-serif;
   padding-left: 1em;
   font-family: '$font-proxima;
   -webkit-appearance: none;
+}
+
+@mixin col-pad-wid ($padval, $color, $obwidth: 100%) {
+  padding: $padval;
+  width: $obwidth;
+  color: $color;
+  @if $obwidth > 50% {
+    font-size: 2em;
+    background-color: complement($color);
+  } @else {
+      font-size: 1em;
+      background-color: complement($color);
+  }
 }
 
 
@@ -57,6 +75,24 @@ $font-proxima: 'Proxima Nova Rg', sans-serif;
   background: url(../images/bg.jpg) no-repeat center center fixed $background;
   background-size: cover;
  }
+
+
+// Mixin testing selectors
+
+.selector {
+  @include col-pad-wid(2%, green , 50%) {
+    text-shadow: 3px 3px 3px;
+  };
+}
+
+.selector-two {
+  @include col-pad-wid(3%, blue, 60%) {
+    text-shadow: -3px -4px 5px;
+    text-transform: capitalize;
+  };
+}
+
+// End mixin testing selectors
 
  header img{
   margin-top: 2em;
